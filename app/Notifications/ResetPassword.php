@@ -42,12 +42,11 @@ class ResetPassword extends ResetPasswordNotification
 
     public function toMail($notifiable)
     {
-        dd(url('password/reset', $this->token));
-        return (new MailMessage)
-        ->subject('إستعادة كلمة المرور')
-        ->line('نحن نرسل هذه الرسالة الإلكترونية لأننا تلقينا طلبًا بنسيان كلمة المرور.')
-        ->action('إعادة ضبط كلمة المرور', url('password/reset', $this->token))
-        ->line('إذا لم تطلب إعادة تعيين كلمة المرور ، فلا يلزم اتخاذ أي إجراء آخر. يرجى الاتصال بنا إذا لم ترسل هذا الطلب.');
+        /*return (new MailMessage)
+            ->subject('إستعادة كلمة المرور - ERP')
+            ->line('أنت تتلقى هذه الرسالة الإلكترونية نظرًا لأن لدينا طلبًا لإعادة تعيين كلمة المرور لحسابك.')
+            ->action('إستعادة كلمة المرور', route("password.reset", $this->token))
+            ->line('إذا لم تطلب إعادة تعيين كلمة المرور ، فلا يلزم اتخاذ أي إجراء آخر.');*/
     }
 
     /**
